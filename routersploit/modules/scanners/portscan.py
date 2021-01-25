@@ -29,10 +29,14 @@ class Exploit(exploits.Exploit):
     modules = None
 
     target = exploits.Option('', 'Target IP address e.g. 192.168.1.1')  # target address
+    min_port = exploits.Option(1, 'Minimum port to be scanned (default 1)')  # minimum port to be scanned
+    max_port = exploits.Option(10, 'Maximum port to be scanned (default 10)')  # maximum port to be scanned
 
     def run(self):
-        for port in range(50):  # TODO adjust range
-            print_status("Checking port {}...".format(port))
+        if int(self.min_port) > int(self.max_port):
+            print_error("Minimum port must not be higher than maximum port")
+            return
+        for port in range(int(self.min_port), int(self.max_port)):
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             try:
                 s.connect((self.target, port))
@@ -40,6 +44,7 @@ class Exploit(exploits.Exploit):
             except:
                 print_error("No open port {}".format(port))
             s.close()
+        print_status("Done")
 
     def check(self):
         print_info("Not implemented yet")
