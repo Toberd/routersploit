@@ -42,3 +42,7 @@ The script works for all IoT devices that expose a web interface or admin panel 
 Basically, you can execute the script on any available website (no warranty if you manage to break the targeted website somehow ;) ).
 For testing purposes, we hosted a small website on our localhost. This simple site just prints the data it receives in the `?data=` query without any kind of filtering.
 This leads to an xss vulnerability that our script should show.
+
+
+![](https://user-images.githubusercontent.com/40575887/109865269-2688b780-7c64-11eb-8c84-ed65b948f9dc.mov)
+
