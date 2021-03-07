@@ -44,5 +44,4 @@ For testing purposes, we hosted a small website on our localhost. This simple si
 This leads to an xss vulnerability that our script should show.
 
 
-![](https://user-images.githubusercontent.com/40575887/109865269-2688b780-7c64-11eb-8c84-ed65b948f9dc.mov)
-
+![Demo Video](https://user-images.githubusercontent.com/40575887/109865269-2688b780-7c64-11eb-8c84-ed65b948f9dc.mov)
